@@ -1,0 +1,83 @@
+body {
+	background-color: #DCDCDC;
+	color: #BDC2C4;
+}
+
+#general {	
+	width: 1300px;
+	height: 420px;
+	background-color: #CACACA;
+} 
+
+#cuerpo{
+	width: 100%;
+	height: 1500;
+}
+ 
+#cabecera {
+	color: white;
+	text-align:center;
+	margin: : auto; 
+	width: 100%;
+	height: 100%;
+	background-color: #0F376E;
+}
+
+#country{
+	width: 60%;
+	height: 100%;
+
+	vertical-align: middle;
+  	line-height: 150px;	
+	float:left;
+	/*background-color: red;*/
+}
+
+#profile {
+	width: 40%;
+	height: 100%; 	
+
+	float: right;
+	/*background-color: black	;*/
+}
+
+#cabecera h1 {
+	font-size: 20pt;
+}
+	
+#cabecera h2 {
+	font-size: 30pt;
+	font-style: italic;
+	color: white;
+}
+
+#cabecera img {
+	/*position: absolute;
+    bottom: 0px;
+    right: 16px; */
+	width: 200px;
+	height: 200px;
+
+	margin: 0px 5px;	
+	border-radius: 50%;
+}
+
+.clear {
+	clear: left;
+	clear: right;
+}
+
+.titulo {
+	text-align: center;
+	color: white;
+	font-size: 15pt;
+}
+
+.usuario {
+	display: none;	
+}
+
+#superamigos img{
+	width: 50%;
+}
+
