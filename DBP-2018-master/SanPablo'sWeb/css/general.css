@@ -1,0 +1,106 @@
+body {
+	background-color: #DCDCDC;
+	color: #BDC2C4;
+}
+#macro{
+	width: 100%;
+	height: auto;
+	background-color: yellow;
+}
+
+
+#barra_chat{
+	width: 10%;
+	height: 800;
+
+	float:right;
+	background-color: red;
+}
+
+
+#general {	
+	width: 80%;
+	height: 1500px;
+	background-color: #CACACA;
+} 
+
+#cuerpo{
+	width: 100%;
+	height: auto ;
+}
+ 
+#cabecera {
+	color: white;
+	text-align:center;
+	margin: : auto; 
+	width: 100%;
+	height: 420;
+	background-color: #0F376E;
+}
+
+#country{
+	width: 60%;
+	height: 100%;
+
+	vertical-align: middle;
+  	line-height: 150px;	
+	float:left;
+	background-color: green;
+}
+
+#profile {
+	width: 40%;
+	height: 100%; 	
+
+	float: right;
+	background-color: black	;
+}
+
+#cabecera h1 {
+	font-size: 20pt;
+}
+	
+#cabecera h2 {
+	font-size: 30pt;
+	font-style: italic;
+	color: white;
+}
+
+#cabecera img {
+	/*position: absolute;
+    bottom: 0px;
+    right: 16px; */
+	width: 200px;
+	height: 200px;
+
+	margin: 0px 5px;	
+	border-radius: 50%;
+}
+
+.clear {
+	clear: left;
+	clear: right;
+}
+
+.titulo {
+	text-align: center;
+	color: white;
+	font-size: 15pt;
+}
+
+.usuario {
+	display: none;	
+}
+
+#superamigos img{
+	width: 50%;
+	width: 200px;
+	height: 200px;
+
+	margin: 0px 5px;	
+	border-radius: 10%;
+}
+
+
+
+
