@@ -9,9 +9,10 @@
 */
 
 .bloque {
-  background-color: #0F376E;
-  border-radius: 10px;
-  box-shadow: 15px 10px #CACACA;	
+  background-color: #D6EAF8;
+  border-radius: 5px;
+  box-shadow: 5px 5px #1B4F72;	
   margin: 20px 30px;
   padding: 10px;
+  color:#2980B9;
 }

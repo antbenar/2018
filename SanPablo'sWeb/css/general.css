@@ -1,36 +1,95 @@
 body {
-	background-color: #DCDCDC;
 	color: #BDC2C4;
 }
 
+#macro{
+	width: 100%;
+	height: 100%;
+}
+
+
+#barra_chat{
+	width: 18%;
+	height: auto;
+
+	position: relative;
+	bottom: 1500px;
+	float:right;
+
+	background-color: #D6EAF8;
+  	border-radius: 5px;
+  	box-shadow: 5px 5px #1B4F72;	
+  	color: #2980B9;
+}
+
+#barra_chat img {
+	text-align:center;
+	width: 90%;
+	height: 20%;
+	margin: 20px 15px;
+}
+
+#barra_chat h2 {
+	text-align:left;
+	color: #1B4F72;
+	font-size: 15pt;
+}
+
 #general {	
-	width: 1300px;
-	height: 420px;
-	background-color: #CACACA;
+	width: 80%;
+	height: 1500px;
 } 
 
 #cuerpo{
 	width: 100%;
-	height: 1500;
+	height: auto ;
 }
  
 #cabecera {
 	color: white;
 	text-align:center;
-	margin: : auto; 
 	width: 100%;
-	height: 100%;
-	background-color: #0F376E;
+	height: 32%;
+	border-radius: 5%; 	
+}
+
+.bgImgCenter{
+	background-image: url('../img/sanpablo.png');
+    background-position: center; 
+    border-radius: 5px;
+  	box-shadow: 5px 5px #1B4F72;	
+
+}
+
+#cabecera h1 {
+	font-size: 17pt;
+}
+	
+#cabecera h2 {
+	font-size: 25pt;
+	font-style: italic;
 }
 
 #country{
 	width: 60%;
 	height: 100%;
-
-	vertical-align: middle;
-  	line-height: 150px;	
+  	line-height: 60px;	
 	float:left;
-	/*background-color: red;*/
+	/*background-color: green;*/
+}
+
+#country h1{
+	font-size: 10pt;
+	position: absolute;
+    top: 13%;
+    left: 10%;
+}
+
+#country h2{
+	font-size: 25pt;
+	position: absolute;
+    top: 2%;
+    left: 10%;
 }
 
 #profile {
@@ -41,24 +100,11 @@ body {
 	/*background-color: black	;*/
 }
 
-#cabecera h1 {
-	font-size: 20pt;
-}
-	
-#cabecera h2 {
-	font-size: 30pt;
-	font-style: italic;
-	color: white;
-}
+#profile img {
+	width: 170px;
+	height: 170px;
 
-#cabecera img {
-	/*position: absolute;
-    bottom: 0px;
-    right: 16px; */
-	width: 200px;
-	height: 200px;
-
-	margin: 0px 5px;	
+	margin: 0px 20px;	
 	border-radius: 50%;
 }
 
@@ -69,7 +115,7 @@ body {
 
 .titulo {
 	text-align: center;
-	color: white;
+	color: #1B4F72;
 	font-size: 15pt;
 }
 
@@ -79,5 +125,13 @@ body {
 
 #superamigos img{
 	width: 50%;
+	width: 200px;
+	height: 200px;
+
+	margin: 0px 5px;	
+	border-radius: 10%;
 }
+
+
+
 
