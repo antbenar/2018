@@ -12,6 +12,9 @@ abstract class PageTemplate {
 		$text .= $this->printHeader();
 		
 		$text .= "<body>";
+				$text .= "<div id='cabecera' class='bgImgCenter'>";
+					$text .= $this->printCabecera();
+				$text .= "</div>";
 				$text .= "<div id='menu'>";
 					$text .= $this->printMenu();
 				$text .= "</div>";
@@ -20,7 +23,7 @@ abstract class PageTemplate {
 				$text .= "</div>";
 		
 				$text .= "<div id = 'footer'>";
-					$text .= $this->printFooter("Anthony");
+					$text .= $this->printFooter("Anthony Benavides");
 				$text .= "</div>";
 		$text .= "</body>";
 		

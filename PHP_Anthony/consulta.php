@@ -16,8 +16,11 @@
 			$text .= "</form>";
 			$text .= "</div>";
 			
-			$tmpTitulo = $_POST["titulo"];
-			$tmpAnho = $_POST["anho"];
+			if( isset($tmpTitulo) && isset($tmpAnho)){
+				$tmpTitulo = $_POST["titulo"];
+				$tmpAnho = $_POST["anho"];
+			}
+			
 			$text .= "<div class='resultado'>";
 			$busquedaRetornoValor = false;
 			if( isset($tmpTitulo) && $tmpTitulo != "") {
