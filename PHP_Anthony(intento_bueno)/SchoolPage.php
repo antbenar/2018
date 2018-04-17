@@ -5,10 +5,11 @@ include 'PageTemplate.php';
 abstract class SchoolPage extends PageTemplate{
 
 	public function SchoolPage( $newTitle='', $newnombre='', $newcarrera='',$newciudad='',$newdia='') {
-
 		$this->title = $newTitle;
-		$this->alumno = new Alumno($newnombre,$newcarrera,$newciudad,$newdia);
-	
+		$this->nombre = $newnombre;
+		$this->carrera = $newcarrera;
+		$this->ciudad = $newciudad;
+		$this->diaNacimiento = $newdia;
 	}
 	
 	public function printHeader(){
@@ -41,17 +42,17 @@ abstract class SchoolPage extends PageTemplate{
 	}
 	
 	public function printCabecera(){
-		if($alumno->ciudad==''){
+		if($this->ciudad==''){
 			return;
 		}
 		$text = "  <div id='country'>
-					  <h2>".$alumno->ciudad."</h2>
-					  <h1>".$alumno->diaNacimiento."</h1>
+					  <h2>".$this->ciudad."</h2>
+					  <h1>".$this->diaNacimiento."</h1>
 					</div>
 
 					<div id='profile'>
-					  <h1>Perfil de ".$alumno->nombre."</h1>
-					  <h2>".$alumno->carrera."</h2>
+					  <h1>Perfil de ".$this->nombre."</h1>
+					  <h2>".$this->carrera."</h2>
 					  <img id='perfil1_img' src='img/perfil1.png' title='perfil1_img'  alt='' >
 					  <hr>
 					  <button class='btn2' onclick='red.fade_in(perfil1_img)'>View Photo</button>

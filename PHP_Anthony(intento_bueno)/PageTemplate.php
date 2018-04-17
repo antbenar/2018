@@ -1,6 +1,4 @@
 <?php
-include 'alumno.php';
-
 abstract class PageTemplate {
 	abstract protected function printHeader();
 	abstract protected function printMenu();
@@ -10,7 +8,10 @@ abstract class PageTemplate {
 
 	protected $title ;
 
-	protected $alumno = Alumno();
+	protected $nombre;
+	protected $carrera;
+	protected $ciudad;
+	protected $diaNacimiento;
 
 	public function printPage() {
 		$text = "<html>";
