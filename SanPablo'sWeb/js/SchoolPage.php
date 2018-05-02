@@ -18,10 +18,8 @@ abstract class SchoolPage extends PageTemplate{
 		$text .= "<link rel='stylesheet' type='text/css' href='css/style.css'>";
 		$text .= "<link rel='stylesheet' type='text/css' href='css/general.css'>";
 		$text .= "<script type='text/javascript' src='js/jquery-3.3.1.min.js' ></script>";
-		$text .= "<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js' ></script>";
 		$text .= "<script type='text/javascript' src='js/main.js' ></script>";
 		$text .= "<script>
-			function Ajax(){
 				$.ajax({
 					data: {
 						variable : 'ALUMNO'
@@ -30,8 +28,7 @@ abstract class SchoolPage extends PageTemplate{
 						$('#miventana').html(response);
 					}
 				});
-			}
-			</script>";
+				</script>";
 		$text .= '</head>';
 		return $text;
 	}
