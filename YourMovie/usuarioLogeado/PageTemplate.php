@@ -31,7 +31,7 @@ abstract class PageTemplate {
 				$text .= "</div>";
 		
 				$text .= "<div id = 'footer'>";
-					$text .= $this->printFooter("Anthony Benavides");
+					$text .= $this->printFooter("");//se le puede agregar un nombre
 				$text .= "</div>";
 		$text .= "</body>";
 		

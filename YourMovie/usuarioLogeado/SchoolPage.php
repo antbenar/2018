@@ -1,7 +1,7 @@
 <?php
 
 include 'PageTemplate.php';
-
+include '../consulta.php';
 abstract class SchoolPage extends PageTemplate{
 
 	public function SchoolPage( $newTitle='', $newnombre='', $newcarrera='',$newciudad='',$newdia='') {
@@ -19,16 +19,6 @@ abstract class SchoolPage extends PageTemplate{
 		$text .= "<link rel='stylesheet' type='text/css' href='css/general.css'>";
 		$text .= "<script type='text/javascript' src='js/jquery-3.3.1.min.js' ></script>";
 		$text .= "<script type='text/javascript' src='js/main.js' ></script>";
-		$text .= "<script>
-				$.ajax({
-					data: {
-						variable : 'ALUMNO'
-						},url: 'servidor.php',
-						success: function(response) {
-						$('#miventana').html(response);
-					}
-				});
-				</script>";
 		$text .= '</head>';
 		return $text;
 	}
@@ -52,23 +42,27 @@ abstract class SchoolPage extends PageTemplate{
 	}
 	
 	public function printCabecera(){
-		if($this->ciudad==''){
-			return;
-		}
-		$text = "  <div id='country'>
-					  <h2>".$this->ciudad."</h2>
-					  <h1>".$this->diaNacimiento."</h1>
+		session_start();
+		$nick=$_SESSION['nick'];
+		$consulta="SELECT nombre_apellido, user, sexo FROM usuario WHERE user='".$nick."';";
+		$json = getJson($consulta);
+		//echo ($json);
+		$miUsuario = json_decode($json)[0];
+		if(isset($miUsuario)){
+			$text = "<div id='country'>
+					  <h2>".$miUsuario->{'user'}."</h2>
+					  <h1>".$miUsuario->{'sexo'}."</h1>
 					</div>
 
 					<div id='profile'>
-					  <h1>Perfil de ".$this->nombre."</h1>
-					  <h2>".$this->carrera."</h2>
+					  <h1>Perfil de ".$miUsuario->{'nombre_apellido'}."</h1>
 					  <img id='perfil1_img' src='img/perfil1.png' title='perfil1_img'  alt='' >
 					  <hr>
 					  <button class='btn2' onclick='red.fade_in(perfil1_img)'>View Photo</button>
 					  <button class='btn1' onclick= ' red.fade_out( perfil1_img )' >Hide Photo</button>
 					</div>";
-		return $text;
+			return $text;
+		}
 	}
 
 	public function printFooter( $autor=''){

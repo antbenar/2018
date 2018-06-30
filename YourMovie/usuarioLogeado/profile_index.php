@@ -1,11 +1,9 @@
 <?php
 	include "SchoolPage.php";
-	include 'macs.php';
-	
 	class Index extends SchoolPage{
 		public function printBody() {
-			$name = returnNameFromMac();
-			$text = "<h1>Bienvenido $name!</h1>";
+			$nick=$_SESSION['nick'];
+			$text = "<h1>Bienvenido $nick!</h1>";
 			return $text;
 		}
 	}
