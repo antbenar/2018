@@ -13,15 +13,17 @@ $result = $connect->query($consulta);
 	if($result){
 		if($result->num_rows > 0){
 			$_SESSION['nick']=$nickname; 
+			echo "Ingreso corractamente";
 			header("Location: usuarioLogeado/profile_index.php"); 
 			exit;
 		}
 		else{
 			echo "Datos no validos";
+			header("Location: index.html"); 
 		}
 	}
 	else{
-		echo "Error al enviar datos al servidor";
+		echo "Error al enviar datos al servidor";		
 	}
 
 

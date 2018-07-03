@@ -45,17 +45,15 @@ abstract class SchoolPage extends PageTemplate{
 		session_start();
 		$nick=$_SESSION['nick'];
 		$consulta="SELECT nombre_apellido, user, sexo FROM usuario WHERE user='".$nick."';";
-		$json = getJson($consulta);
-		//echo ($json);
-		$miUsuario = json_decode($json)[0];
+		$miUsuario = getJson($consulta);
 		if(isset($miUsuario)){
 			$text = "<div id='country'>
-					  <h2>".$miUsuario->{'user'}."</h2>
-					  <h1>".$miUsuario->{'sexo'}."</h1>
+					  <h2>".$miUsuario[0]->{'nombre_apellido'}.	"</h2>
+					  <h1>".$miUsuario[0]->{'sexo'}."</h1>
 					</div>
 
 					<div id='profile'>
-					  <h1>Perfil de ".$miUsuario->{'nombre_apellido'}."</h1>
+					  <h1>Perfil de ".$miUsuario[0]->{'user'}."</h1>
 					  <img id='perfil1_img' src='img/perfil1.png' title='perfil1_img'  alt='' >
 					  <hr>
 					  <button class='btn2' onclick='red.fade_in(perfil1_img)'>View Photo</button>

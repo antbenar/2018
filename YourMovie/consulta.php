@@ -20,20 +20,25 @@ function getJson($query){
 
     if(!$result = mysqli_query($conexion, $query)) die(); //si la conexión cancelar programa
 
-    $rawdata = array(); //creamos un array
+    $data = array(); //creamos un array
 
     //guardamos en un array multidimensional todos los datos de la consulta
     $i=0;
 
     while($row = mysqli_fetch_array($result))
     {
-        $rawdata[$i] = $row;
+        $data[$i] = json_encode($row);//covertimos a jasson
         $i++;
     }
+    mysqli_close($conexion);//desconectamos la base de datos
 
-    $close = mysqli_close($conexion);//desconectamos la base de datos
-  
-    return json_encode($rawdata); //lo convertimmos a jsson
+
+    $result=array();
+    for ($i = 0; $i < count($data); $i++) {
+         $result[$i]= json_decode($data[$i]);
+    }   
+
+    return  $result;   
 }
 
 ?>
