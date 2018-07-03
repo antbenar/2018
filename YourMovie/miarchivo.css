@@ -1,6 +1,6 @@
 body {
 	background-color : #d9d9d9;
-	 background-image: url(img/fondo2.png);
+	 background-image: url(../img/fondo2.png);
    background-attachment: fixed;
     background-position: center; 
 	background-repeat: repeat;

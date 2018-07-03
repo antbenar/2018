@@ -14,7 +14,7 @@ $result = $connect->query($consulta);
 		if($result->num_rows > 0){
 			$_SESSION['nick']=$nickname; 
 			echo "Ingreso corractamente";
-			header("Location: usuarioLogeado/profile_index.php"); 
+			header("Location: profile.php"); 
 			exit;
 		}
 		else{

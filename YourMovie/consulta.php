@@ -32,7 +32,6 @@ function getJson($query){
     }
     mysqli_close($conexion);//desconectamos la base de datos
 
-
     $result=array();
     for ($i = 0; $i < count($data); $i++) {
          $result[$i]= json_decode($data[$i]);

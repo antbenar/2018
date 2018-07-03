@@ -53,7 +53,7 @@ abstract class SchoolPage extends PageTemplate{
 					</div>
 
 					<div id='profile'>
-					  <h1>Perfil de ".$miUsuario[0]->{'user'}."</h1>
+					  <h1>Perfil de ".$miUsuario[0]->{'user'}."</h1>	
 					  <img id='perfil1_img' src='img/perfil1.png' title='perfil1_img'  alt='' >
 					  <hr>
 					  <button class='btn2' onclick='red.fade_in(perfil1_img)'>View Photo</button>
