@@ -1,4 +1,4 @@
-CREATE DATABASE YourMovie
+CREATE DATABASE YourMovie;
 
 CREATE TABLE ACTOR
 (
@@ -51,7 +51,7 @@ CREATE TABLE ACTOR_X_PELICULA
 
 CREATE TABLE USUARIO
 (
-	codigo varchar(10) not null,
+	codigo INT NOT NULL AUTO_INCREMENT,
 	nombre_apellido varchar(50),
 	user varchar(30),
 	password varchar(30),
@@ -61,7 +61,7 @@ CREATE TABLE USUARIO
 
 CREATE TABLE USUARIO_X_CINE
 (
-	codUser varchar(10),
+	codUser INT,
 	codCine varchar(10),
 	CONSTRAINT PK_USUARIO_X_CINE	PRIMARY KEY (codUser,codCine),
 	CONSTRAINT FK_USUARIO_CINE FOREIGN KEY (codUser) REFERENCES USUARIO(codigo),
@@ -70,7 +70,7 @@ CREATE TABLE USUARIO_X_CINE
 
 CREATE TABLE USUARIO_X_PELICULA
 (
-	codUser varchar(10),
+	codUser INT,
 	codPelicula varchar(10),
 	CONSTRAINT PK_USUARIO_X_PELICULA PRIMARY KEY (codUser,codPelicula),
 	CONSTRAINT FK_USUARIO_PELICULA FOREIGN KEY (codUser) REFERENCES USUARIO(codigo),
@@ -79,7 +79,7 @@ CREATE TABLE USUARIO_X_PELICULA
 
 CREATE TABLE USUARIO_X_ACTOR
 (
-	codUser varchar(10),
+	codUser INT,
 	codActor varchar(10),
 	CONSTRAINT PK_USUARIO_X_ACTOR	PRIMARY KEY (codUser,codActor),
 	CONSTRAINT FK_USUARIO_ACTOR FOREIGN KEY (codUser) REFERENCES USUARIO(codigo),
@@ -88,10 +88,19 @@ CREATE TABLE USUARIO_X_ACTOR
 
 CREATE TABLE USUARIO_X_GENERO
 (
-	codUser varchar(10),
+	codUser INT,
 	codgenero varchar(10),
 	CONSTRAINT PK_USUARIO_X_GENERO	PRIMARY KEY (codUser,codgenero),
 	CONSTRAINT FK_USUARIO_GENERO FOREIGN KEY (codUser) REFERENCES USUARIO(codigo),
 	CONSTRAINT FK_GENERO_USUARIO FOREIGN KEY (codgenero) REFERENCES GENERO(codigo)
 );
+
+
+CREATE TABLE 'Comentario'. ( 
+    codigo int,
+    tema VARCHAR(20) NOT NULL , 
+    Comentario TEXT NOT NULL , 
+    nameUser VARCHAR(50) NOT NULL,
+    
+) ENGINE = InnoDB;
 
