@@ -34,7 +34,7 @@ CREATE TABLE PELICULA
 	nombre varchar(30),
 	coddirector varchar(10),
 	codgenero varchar(10),
-	descripcion varchar(50),
+	descripcion TEXT,
 	CONSTRAINT PELICULA_PK PRIMARY KEY (codigo),
 	CONSTRAINT FK_DIRECTOR FOREIGN KEY (coddirector) REFERENCES DIRECTOR(codigo),
 	CONSTRAINT FK_GENERO FOREIGN KEY (codgenero) REFERENCES GENERO(codigo)
@@ -96,11 +96,11 @@ CREATE TABLE USUARIO_X_GENERO
 );
 
 
-CREATE TABLE 'Comentario'. ( 
-    codigo int,
+CREATE TABLE Comentario ( 
+    codigo INT NOT NULL AUTO_INCREMENT, 
     tema VARCHAR(20) NOT NULL , 
     Comentario TEXT NOT NULL , 
-    nameUser VARCHAR(50) NOT NULL,
-    
-) ENGINE = InnoDB;
-
+    codUser VARCHAR(50) NOT NULL,
+    CONSTRAINT PK_COMENTARIO	PRIMARY KEY (codigo),
+     CONSTRAINT FK_USUARIO_X_COMENTARIO	FOREIGN KEY (codigo) REFERENCES USUARIO(codigo )
+);
