@@ -11,6 +11,24 @@
     <!-- Custom styles for this template -->
     <link href="css/blog.css" rel="stylesheet">
     <?php include 'consulta.php'; ?>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).on("ready",function(){
+        $.ajaxSetup({"cache":false});
+        setInterval(loadcomment(),500);
+      });
+      var request = false;
+      var archivo ="comentario.php";
+      setInterval(loadcomment(),500);
+
+      function loadcomment(){
+        $.ajax({
+          url:"comentario.php"
+        }).done(function(data){
+          $("#comeent").html(data);
+        });
+      }
+    </script>
   </head>
 
 
@@ -47,36 +65,17 @@
           
         </div>
 
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="cerrar_sesion.php">
             Log Out
             <img  src="img/cancelar.png" title="MiFoto" alt="" width="30" height="30" >
             
         </a>
 </nav>
-<?php
-  $consulta="SELECT usuario.nombre_apellido, comentario.tema, comentario.Comentario
-  FROM comentario
-  INNER JOIN usuario ON Usuario.codigo=comentario.codUser;";
-  $comentarios=getJson($consulta);
-?>
-
 <br><br><br>
 
 <div class="container" style="background-image:url(img/fondo.jpg); ">
   <br>
-    <?php 
-      foreach ($comentarios as $comentario) {
-         echo "<div class='card border-success mb-3' style='max-width: 70rem;'>";
-         echo " <div class='card-header'>";
-         echo "   <strong> ".$comentario->{'nombre_apellido'}."</strong> dice:";
-         echo "  </div>";
-         echo " <div class='card-body '>";
-         echo "   <h5 class='card-title'>El tema es: ".$comentario->{'tema'}."</h5>";
-         echo "   <p class='card-text'>".$comentario->{'Comentario'}."</p>";
-         echo " </div>";
-         echo "</div>";
-      }
-    ?>
+  <div id="comeent"></div>
 
 
   <div class="card border-success mb-3" style="max-width: 70rem;">

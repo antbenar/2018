@@ -57,8 +57,8 @@
     </a>
   </nav>
 
-  <?php session_start();//consultar info usuario
-  $nick=$_SESSION['nick']; 
+  <?php 
+  $nick=$_GET['q']; 
   $consulta="SELECT codigo,nombre_apellido, user, sexo FROM usuario WHERE user='".$nick."';";
   $miUsuario = getJson($consulta);
 
